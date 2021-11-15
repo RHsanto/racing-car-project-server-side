@@ -4,7 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 const express = require('express');
 const cors = require('cors')
 const app =express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8000;
 
 //midalware
 app.use(cors());
@@ -33,7 +33,7 @@ async function run() {
     })
 
   // GET API ORDERS
-        app.get('/orders', async (req,res)=>{
+        app.get('/saveorders', async (req,res)=>{
           const cursor = ordersCollection.find({})
           const orders = await cursor.toArray();
           res.send(orders);
@@ -42,7 +42,7 @@ async function run() {
 
 
     // GET API PRODUCTS
-   app.get('/products', async (req,res)=>{
+   app.get('/saveproducts', async (req,res)=>{
     const cursor = productsCollection.find({});
     const offers = await cursor.toArray();
     res.send(offers);
@@ -74,7 +74,7 @@ async function run() {
 
 
  // GET API REVIEWS
- app.get('/reviews', async (req,res)=>{
+ app.get('/savereviews', async (req,res)=>{
   const cursor = reviewsCollection.find({});
   const reviews = await cursor.toArray();
   res.send(reviews);
