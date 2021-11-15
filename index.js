@@ -161,7 +161,7 @@ async function run() {
 run().catch(console.dir);
 
 app.get('/',(req,res)=>{
-  res.send('ki khobor');
+  res.send('Running the server on heruku');
 })
 app.listen(port, () => {
   console.log('Example app listening at',port)
