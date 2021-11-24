@@ -25,14 +25,14 @@ async function run() {
     const database2 = client.db("allReviews")
     const reviewsCollection = database2.collection("reviews");
 
-  //ADD Order COLLECTION 
+  //ADD ORDERS COLLECTION 
     app.post('/orders', async (req,res) => {
       const orders = req.body;
       const result = await ordersCollection.insertOne(orders);
       res.json( result)
     })
 
-  // GET API ORDERS
+  // GET API ALL ORDERS
         app.get('/saveorders', async (req,res)=>{
           const cursor = ordersCollection.find({})
           const orders = await cursor.toArray();
