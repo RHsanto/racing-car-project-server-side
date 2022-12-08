@@ -37,7 +37,7 @@ async function run() {
           const cursor = ordersCollection.find({})
           const orders = await cursor.toArray();
           res.send(orders);
-    
+      
          });
 
 
